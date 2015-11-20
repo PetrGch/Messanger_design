@@ -1,4 +1,4 @@
-package com.example.petr.messenger;
+package com.example.petr.mes2;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

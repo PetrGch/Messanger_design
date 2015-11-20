@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/home/petr/AndroidStudioProjects/Messenger2/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jar="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/home/petr/AndroidStudioProjects/Messenger2/app/build/intermediates/pre-dexed/debug/classes-de0611520d4f9fbf5d86004cd399a08618190848.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/classes-778cd7b9faad21d0fbdf141280c383f7246997f0.jar" />
+    </item>
+    <item
+        jar="/home/petr/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-4d2050eeeb15d651b1cb6261c9e32ce95317d093.jar" />
+    </item>
+    <item
+        jar="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/classes-71228d4c03fedb76b696f4d9d224c2cfeb7c7252.jar" />
+    </item>
+    <item
+        jar="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-c2167e60e6c291d8c5900ff9ec87ab7e1d7180b0.jar" />
+    </item>
+    <item
+        jar="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/classes-e0a0fe1990ac2762678abbddaf67369ce7033af4.jar" />
+    </item>
+    <item
+        jar="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/home/petr/AndroidStudioProjects/Mes2/app/build/intermediates/pre-dexed/debug/classes-a569009206cc2b0b75138442f27a7378e820f795.jar" />
     </item>
 
 </items>
