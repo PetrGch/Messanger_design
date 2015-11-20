@@ -94,7 +94,10 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
     public void registrationMe () {
         registrationCard.setVisibility(View.VISIBLE);
         logCard.setVisibility(View.GONE);
-
+        /* public void logIn () {
+        registrationCard.setVisibility(View.GONE);
+        logCard.setVisibility(View.VISIBLE);
+    }*/
 
     }
 
