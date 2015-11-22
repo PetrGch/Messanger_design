@@ -6,12 +6,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ActionMenuView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -19,25 +21,29 @@ import android.widget.TextView;
 
 public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
+    RelativeLayout mainRegPage;
+
     EditText editLogin;
     EditText editPassword;
-    EditText editConfPassw;
-    EditText editEmail;
+    EditText editRegName;
+    EditText editRegPassword;
+    EditText editRegCongPass;
+    EditText editRegEmail;
+
+    CheckBox savePassword;
+    CheckBox savePassword2;
 
     android.support.v7.widget.AppCompatButton btnLogin;
-    CustomView addMe;
+    android.support.v7.widget.AppCompatButton btnRegistration;
+    android.support.v7.widget.AppCompatButton btnForgotPass;
 
-    com.example.petr.mes2.CustomView btnReturn;
+    CustomView addMe;
+    CustomView2 btnReturn;
 
     android.support.v7.widget.CardView loginCard;
     android.support.v7.widget.CardView registrationCard;
 
-    LinearLayout layoutReg;
-    RelativeLayout logCard;
-    RelativeLayout mainRegPage;
-
-
-    String TAG;
+    String TAG = "myLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +51,29 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.content_mes2);
         getSupportActionBar().hide();
 
-        loginCard = (android.support.v7.widget.CardView) findViewById(R.id.loginCard);
+        /*View group*/
+
         mainRegPage = (RelativeLayout) findViewById(R.id.mainRegPage);
-        registrationCard = (android.support.v7.widget.CardView) findViewById(R.id.registrationCard);
-        btnReturn = (com.example.petr.mes2.CustomView) findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(this);
+
+        editLogin = (EditText) findViewById(R.id.editLogin);
+        editPassword = (EditText) findViewById(R.id.editPassword);
+        editRegName = (EditText) findViewById(R.id.editRegName);
+        editRegPassword = (EditText) findViewById(R.id.editRegPassword);
+        editRegCongPass = (EditText) findViewById(R.id.editRegConfPass);
+        editRegEmail = (EditText) findViewById(R.id.editRegEmail);
+
+        savePassword = (CheckBox) findViewById(R.id.savePassword);
+        savePassword2 = (CheckBox) findViewById(R.id.savePassword2);
 
         btnLogin = (android.support.v7.widget.AppCompatButton) findViewById(R.id.btnLogin);
+        btnRegistration = (android.support.v7.widget.AppCompatButton) findViewById(R.id.btnRegistration);
+        btnForgotPass = (android.support.v7.widget.AppCompatButton) findViewById(R.id.btnForgetPass);
 
-        logCard = (RelativeLayout) findViewById(R.id.logCard);
+        loginCard = (android.support.v7.widget.CardView) findViewById(R.id.loginCard);
+        registrationCard = (android.support.v7.widget.CardView) findViewById(R.id.registrationCard);
+
+        btnReturn = (com.example.petr.mes2.CustomView2) findViewById(R.id.btnReturn);
+        btnReturn.setOnClickListener(this);
 
         addMe = (CustomView) findViewById(R.id.addMe);
         addMe.setOnClickListener(this);
@@ -75,35 +95,21 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
 
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.translat_right);
-        btnLogin.startAnimation(animation);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addMe:
-                registrationMe();
+                animationForButton(0);
+                switchCard(0);
                 break;
             case R.id.btnReturn:
-                logIn();
+                animationForButton(1);
+                switchCard(1);
                 break;
         }
-    }
-
-    public void registrationMe () {
-        registrationCard.setVisibility(View.VISIBLE);
-        logCard.setVisibility(View.GONE);
-        /* public void logIn () {
-        registrationCard.setVisibility(View.GONE);
-        logCard.setVisibility(View.VISIBLE);
-    }*/
-
-    }
-
-    public void logIn () {
-        registrationCard.setVisibility(View.GONE);
-        logCard.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -126,5 +132,35 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void animationForButton (int value) {
+        Animation animation;
+
+        if (value == 0) {
+            animation = AnimationUtils.loadAnimation(this, R.anim.translat_right);
+            btnLogin.startAnimation(animation);
+        } else if (value == 1) {
+            animation = AnimationUtils.loadAnimation(this, R.anim.translat_right);
+            btnRegistration.startAnimation(animation);
+
+            mainRegPage.removeView(btnForgotPass);
+        }
+    }
+
+    public void switchCard (int value) {
+
+        if (value == 0) {
+            registrationCard.setVisibility(View.VISIBLE);
+            loginCard.setVisibility(View.GONE);
+
+        } else if (value == 1) {
+            registrationCard.setVisibility(View.GONE);
+            loginCard.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void errorMessage () {
+
     }
 }
