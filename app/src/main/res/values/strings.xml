@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Mes2</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_contact_list">ContactList</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="action_websearch">Searcher</string>
+    <string name="app_not_available">Not available</string>
+
+    <string-array name="links_for_drawer">
+        <item>Contacts</item>
+        <item>Inviters</item>
+        <item>Archived</item>
+        <item>Blocked people</item>
+        <item>Settings</item>
+    </string-array>
 </resources>
