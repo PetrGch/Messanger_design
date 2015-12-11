@@ -108,8 +108,6 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-
-
     }
 
     @Override

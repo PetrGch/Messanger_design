@@ -5,3 +5,6 @@
 .DS_Store
 /build
 /captures
+/Mes2.iml
+/.idea
+/gradle
