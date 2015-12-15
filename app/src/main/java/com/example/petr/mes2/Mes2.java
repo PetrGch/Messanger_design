@@ -2,6 +2,7 @@ package com.example.petr.mes2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,6 +24,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.concurrent.ExecutionException;
+
+import yoba.protocol.adapter.network.NetworkFailException;
 
 public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
@@ -131,6 +135,36 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.btnRegistration:
                 errorMessage(1);
+
+                Bundle bundle = new Bundle();
+
+                bundle.putString("regName", editRegName.getText().toString());
+                bundle.putString("regPass", editRegPassword.getText().toString());
+                bundle.putString("regEmail", editRegEmail.getText().toString());
+
+                String token;
+                try {
+                    token = new AsyncTask<Bundle, Void, String>() {
+
+
+                        @Override
+                        protected String doInBackground(Bundle... params) {
+                            Bundle regparams = params[0];
+                            try {
+                                return ((BigBrotherApplication)getApplication()).serverAdapter.registerUser(
+                                        regparams.getString("regName"),
+                                        regparams.getString("regPass"),
+                                        regparams.getString("regEmail")
+                                );
+                            } catch (NetworkFailException e){
+
+                            }
+                            return null;
+                        }
+                    }.execute(bundle).get();
+
+                } catch (Exception e){return;}
+
                 if (savePassword.isChecked()) {
                 }
         }
