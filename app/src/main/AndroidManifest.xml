@@ -12,7 +12,7 @@
             android:name=".Mes2"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"
-                android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +23,8 @@
             android:name=".ContactList"
             android:label="@string/title_activity_contact_list"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".MessageActivity" >
         </activity>
     </application>
 

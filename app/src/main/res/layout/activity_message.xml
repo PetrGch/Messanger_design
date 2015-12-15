@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.petr.mes2.MessageActivity">
+    <com.example.petr.mes2.MessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:gravity="right"/>
+    <com.example.petr.mes2.MessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message2"/>
+    <com.example.petr.mes2.MessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message3"
+        android:layout_gravity="right"/>
+    <com.example.petr.mes2.MessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message4"/>
+    <com.example.petr.mes2.MessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message5"
+        android:gravity="right"/>
+
+</LinearLayout>

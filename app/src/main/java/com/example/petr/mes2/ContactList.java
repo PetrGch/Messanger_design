@@ -58,8 +58,11 @@ public class ContactList extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                startActivity(new Intent(ContactList.this, MessageActivity.class));
             }
         });
+
+        ((MessageView)findViewById(R.id.message)).setText("Shit");
 
         /*Icon in actionBar */
 
