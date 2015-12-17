@@ -5,7 +5,7 @@ package com.example.petr.mes2;
  */
 public class NetworkConstants  {
 
-    public static String host = "localhost";
+    public static String host = "192.168.1.141";
 
     public static int port = 1527;
 

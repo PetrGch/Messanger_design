@@ -1,5 +1,7 @@
 package com.example.petr.mes2;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -9,18 +11,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ActionMenuView;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.Vector;
@@ -144,24 +142,37 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
                 String token;
                 try {
-                    token = new AsyncTask<Bundle, Void, String>() {
+                    new AsyncTask<Bundle, Void, String>() {
 
 
                         @Override
                         protected String doInBackground(Bundle... params) {
                             Bundle regparams = params[0];
                             try {
-                                return ((BigBrotherApplication)getApplication()).serverAdapter.registerUser(
+                                return ((BigBrotherApplication)Mes2.this.getApplication()).getServerAdapter().registerUser(
                                         regparams.getString("regName"),
                                         regparams.getString("regPass"),
                                         regparams.getString("regEmail")
                                 );
-                            } catch (NetworkFailException e){
-
+                                //((BigBrotherApplication)getApplication()).getServerAdapter();
+                            } catch (final NetworkFailException e){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
                             }
                             return null;
                         }
-                    }.execute(bundle).get();
+
+                        @Override
+                        protected void onPostExecute(String s) {
+                            super.onPostExecute(s);
+                            getSharedPreferences("userdata" ,MODE_APPEND).edit().putString("usertoken", s);
+                            Toast.makeText(getApplicationContext(), "Authorized: "+s, Toast.LENGTH_LONG).show();
+                        }
+                    }.execute(bundle);
 
                 } catch (Exception e){return;}
 
@@ -264,7 +275,7 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
             for (int x = 0; x < editList.size(); x++) {
 
-                EditText result = (EditText) editList.get(x);
+                EditText result = editList.get(x);
                 if (result.getText().toString().length() == 0) {
                     result.setError("The field is not filled");
                 }
@@ -273,7 +284,6 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void saveData () {
-
         sPref = getSharedPreferences("myPref", MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
         ed.putString("logIn", editLogin.getText().toString());
