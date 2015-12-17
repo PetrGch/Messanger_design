@@ -15,6 +15,13 @@ public class MessageView extends LinearLayout{
 
     private boolean isFromMe = true;
 
+    public MessageView(Context context) {
+        super(context);
+        inflate(context, R.layout.message_view_layout, this);
+
+    }
+
+
     public MessageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         inflate(context, R.layout.message_view_layout, this);

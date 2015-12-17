@@ -7,28 +7,10 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.petr.mes2.MessageActivity">
-    <com.example.petr.mes2.MessageView
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message"
-        android:gravity="right"/>
-    <com.example.petr.mes2.MessageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message2"/>
-    <com.example.petr.mes2.MessageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message3"
-        android:layout_gravity="right"/>
-    <com.example.petr.mes2.MessageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message4"/>
-    <com.example.petr.mes2.MessageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message5"
-        android:gravity="right"/>
+        android:layout_height="match_parent"
+        android:id="@+id/message_list"/>
 
 </LinearLayout>
