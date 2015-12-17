@@ -28,6 +28,8 @@ import yoba.protocol.adapter.network.NetworkFailException;
 
 public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
+    public enum actionType {LOGIN, REGISTER};
+
     RelativeLayout mainRegPage;
 
     EditText editLogin;
@@ -118,12 +120,12 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.addMe:
-                animationForButton(0);
-                switchCard(0);
+                animationForButton(actionType.LOGIN.ordinal());
+                switchCard(actionType.LOGIN.ordinal());
                 break;
             case R.id.btnReturn:
-                animationForButton(1);
-                switchCard(1);
+                animationForButton(actionType.REGISTER.ordinal());
+                switchCard(actionType.REGISTER.ordinal());
                 break;
             case R.id.btnLogin:
                 errorMessage(0);
