@@ -7,18 +7,18 @@ import android.widget.RelativeLayout;
 /**
  * Created by petr on 19.11.15.
  */
-public class CustomView extends RelativeLayout {
-    public CustomView(Context context) {
+public class GoToRegistrationButtonView extends RelativeLayout {
+    public GoToRegistrationButtonView(Context context) {
         super(context);
         init();
     }
 
-    public CustomView(Context context, AttributeSet attrs) {
+    public GoToRegistrationButtonView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public CustomView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public GoToRegistrationButtonView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

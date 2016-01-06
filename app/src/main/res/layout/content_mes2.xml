@@ -90,7 +90,7 @@
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout">
 
-                <com.example.petr.mes2.CustomView
+                <com.example.petr.mes2.GoToRegistrationButtonView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentLeft="true"
@@ -238,7 +238,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true">
 
-                    <com.example.petr.mes2.CustomView2
+                    <com.example.petr.mes2.ReturnToLoginButtonView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_alignParentLeft="true"

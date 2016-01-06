@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class ContactList extends AppCompatActivity {
+public class ContactListActivity extends AppCompatActivity implements UpdatableMessagingActivity{
 
     private String[] drawerLinkTitles;
     private ListView drawerListView;
@@ -58,7 +58,7 @@ public class ContactList extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                startActivity(new Intent(ContactList.this, MessageActivity.class));
+                startActivity(new Intent(ContactListActivity.this, MessageActivity.class));
             }
         });
 

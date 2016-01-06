@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import yoba.protocol.adapter.Message;
 
-public class MessageActivity extends AppCompatActivity {
+public class MessageActivity extends AppCompatActivity implements UpdatableMessagingActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

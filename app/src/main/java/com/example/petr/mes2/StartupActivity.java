@@ -1,18 +1,10 @@
 package com.example.petr.mes2;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.Toolbar;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,12 +13,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.*;
 
 import java.util.ArrayList;
-import java.util.Vector;
-import java.util.concurrent.ExecutionException;
 
 import yoba.protocol.adapter.network.NetworkFailException;
 
-public class Mes2 extends AppCompatActivity implements View.OnClickListener {
+public class StartupActivity extends AppCompatActivity implements View.OnClickListener {
 
     public enum actionType {LOGIN, REGISTER};
 
@@ -46,8 +36,8 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
     android.support.v7.widget.AppCompatButton btnRegistration;
     android.support.v7.widget.AppCompatButton btnForgotPass;
 
-    CustomView addMe;
-    CustomView2 btnReturn;
+    GoToRegistrationButtonView addMe;
+    ReturnToLoginButtonView btnReturn;
 
     android.support.v7.widget.CardView loginCard;
     android.support.v7.widget.CardView registrationCard;
@@ -89,10 +79,10 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
         btnForgotPass = (android.support.v7.widget.AppCompatButton) findViewById(R.id.btnForgetPass);
         btnForgotPass.setOnClickListener(this);
 
-        btnReturn = (com.example.petr.mes2.CustomView2) findViewById(R.id.btnReturn);
+        btnReturn = (com.example.petr.mes2.ReturnToLoginButtonView) findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(this);
 
-        addMe = (CustomView) findViewById(R.id.addMe);
+        addMe = (GoToRegistrationButtonView) findViewById(R.id.addMe);
         addMe.setOnClickListener(this);
 
     }
@@ -130,7 +120,7 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
             case R.id.btnLogin:
                 errorMessage(0);
                 saveData();
-                intent = new Intent(this, ContactList.class);
+                intent = new Intent(this, ContactListActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btnRegistration:
@@ -151,7 +141,7 @@ public class Mes2 extends AppCompatActivity implements View.OnClickListener {
                         protected String doInBackground(Bundle... params) {
                             Bundle regparams = params[0];
                             try {
-                                return ((BigBrotherApplication)Mes2.this.getApplication()).getServerAdapter().registerUser(
+                                return ((BigBrotherApplication)StartupActivity.this.getApplication()).getServerAdapter().registerUser(
                                         regparams.getString("regName"),
                                         regparams.getString("regPass"),
                                         regparams.getString("regEmail")
