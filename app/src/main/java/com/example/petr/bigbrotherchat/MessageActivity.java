@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,5 +19,10 @@ public class MessageActivity extends AppCompatActivity implements UpdatableMessa
         ArrayList<Message> messages = new ArrayList<>();
         messages.add(new Message(Long.MAX_VALUE, "", "", "dlrungbldifunhblidfnh bg", "2015-11-11 11:11:11"));
         listView.setAdapter(new MessageListAdapter(this, R.layout.message_view_layout, messages));
+    }
+
+    @Override
+    public void updateMessages() {
+
     }
 }

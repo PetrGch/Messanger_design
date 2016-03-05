@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 
 import android.os.AsyncTask;
@@ -35,7 +35,7 @@ public class MessageReceiveScheduler {
                 updateCycle();
             }
         };
-        updateLoop = looper.scheduleAtFixedRate(r, 100, 100, TimeUnit.MILLISECONDS);
+        updateLoop = looper.scheduleAtFixedRate(r, frequpdate, frequpdate, TimeUnit.MILLISECONDS);
     }
 
     public void stopUpdates(){

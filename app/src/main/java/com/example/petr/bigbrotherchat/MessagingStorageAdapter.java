@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import yoba.protocol.adapter.Message;
 

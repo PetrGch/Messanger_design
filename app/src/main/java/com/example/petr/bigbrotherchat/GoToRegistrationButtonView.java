@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.content.Context;
 import android.util.AttributeSet;

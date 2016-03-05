@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.app.SearchManager;
 import android.content.Intent;
@@ -34,6 +34,11 @@ public class ContactListActivity extends AppCompatActivity implements UpdatableM
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
+
+    @Override
+    public void updateMessages() {
+        
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

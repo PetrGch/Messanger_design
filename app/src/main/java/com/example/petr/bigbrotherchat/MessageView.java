@@ -1,10 +1,9 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 

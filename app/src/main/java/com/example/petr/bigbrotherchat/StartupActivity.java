@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -79,7 +79,7 @@ public class StartupActivity extends AppCompatActivity implements View.OnClickLi
         btnForgotPass = (android.support.v7.widget.AppCompatButton) findViewById(R.id.btnForgetPass);
         btnForgotPass.setOnClickListener(this);
 
-        btnReturn = (com.example.petr.mes2.ReturnToLoginButtonView) findViewById(R.id.btnReturn);
+        btnReturn = (com.example.petr.bigbrotherchat.ReturnToLoginButtonView) findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(this);
 
         addMe = (GoToRegistrationButtonView) findViewById(R.id.addMe);

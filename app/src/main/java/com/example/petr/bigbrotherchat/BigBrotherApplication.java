@@ -1,4 +1,4 @@
-package com.example.petr.mes2;
+package com.example.petr.bigbrotherchat;
 
 import android.app.Application;
 import android.os.AsyncTask;
@@ -7,14 +7,12 @@ import android.widget.Toast;
 import yoba.protocol.adapter.Adapter;
 import yoba.protocol.adapter.network.NetworkFailException;
 
-import java.util.concurrent.ExecutionException;
-
 /**
  * Created by petr on 15.12.15.
  */
 public class BigBrotherApplication extends Application  {
 
-    private Adapter serverAdapter = null;
+    private Adapter serverAdapter;
 
     @Override
     public void onCreate() {
